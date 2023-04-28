@@ -11,13 +11,16 @@ body {
 }
 
 .container {
-    background-image: url("bezel.png"), url("scanlines.png");
-    background-repeat: no-repeat, no-repeat;
-    background-size: contain, contain;
-    background-position: center center, center center;
-    padding: 55px;
-    max-width: 800px;
-    text-align: left;
+  width: 806px;
+  height: 609px;
+  background-image: url("bezel.png"), url("scanlines.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-position: center center, center center;
+  padding: 55px 0 0 55px;
+  text-align: left;
+  position: relative;
+  /* Rest of your styles */
 }
 
 .prompt {
@@ -80,7 +83,30 @@ body {
     }
 }
 
+@keyframes flashAnimation {
+  0% {
+    background-image: url("bezel.png"), url("scanlines.png");
+    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random())); /* Randomize the translation */
+  }
+  50% {
+    background-image: url("bezel.png"), url("rick-roll.gif");
+    background-size: contain, 98% auto;
+	filter: brightness(50%);
+    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random())); /* Randomize the translation */
+  }
+  100% {
+    background-image: url("bezel.png"), url("scanlines.png");
+    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random())); /* Randomize the translation */
+  }
+}
+
+.container.flashing {
+  animation: flashAnimation 3s linear infinite;
+  animation-delay: 1s; /* Delay the animation start by 1 second */
+}
+
 .msdos-section {
+
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
 }
