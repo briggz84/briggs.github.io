@@ -1,0 +1,111 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-image: url("bezel.png"), url("scanlines.png");
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+    background-position: center center, center center;
+    padding: 55px;
+    max-width: 800px;
+    text-align: left;
+}
+
+.prompt {
+    color: #0ff;
+}
+
+.input {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.output {
+    color: #fff;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+.command {
+    color: #0ff;
+}
+
+.directory {
+    color: #fff;
+}
+
+.parameter {
+    color: #f0f;
+}
+
+.ascii-art {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    white-space: pre;
+    animation: colorFade 8s infinite;
+    margin-left: 50px; /* Adjust the value as needed */
+}
+
+.cursor {
+    animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes colorFade {
+    0%, 10% { color: #0f0; }
+    20%, 30% { color: #f00; }
+    40%, 50% { color: #00f; }
+    60%, 70% { color: #ff0; }
+    80%, 90% { color: #f00; }
+    100% { color: #0f0; }
+}
+
+@keyframes cursorBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.msdos-section {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.msdos-section:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+.msdos-section:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 5px;
+    }
+}
