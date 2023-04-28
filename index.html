@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MS-DOS 6.22 Command Prompt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .prompt {
+            color: #fff;
+        }
+
+        .input {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .output {
+            color: #fff;
+            margin-bottom: 10px;
+            white-space: pre-wrap;
+        }
+
+        .command {
+            color: #0ff;
+        }
+
+        .directory {
+            color: #fff;
+        }
+
+        .parameter {
+            color: #f0f;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="prompt">C:\&gt;</div>
+    <div class="output">Microsoft(R) MS-DOS(R) Version 6.22</div>
+    <div class="input">
+        <span class="command">DIR</span>
+    </div>
+    <div class="output">
+        Volume in drive C is DOS
+        Volume Serial Number is 1234-5678
+        Directory of C:\
+
+        04/28/2023  12:00 PM    &lt;DIR&gt;          .
+        04/28/2023  12:00 PM    &lt;DIR&gt;          ..
+        04/28/2023  12:00 PM           FILE1.TXT  file1.txt
+        04/28/2023  12:00 PM           FILE2.TXT  file2.txt
+                    2 File(s)        357,023 bytes
+                    2 Dir(s)   1,234,567,890 bytes free
+    </div>
+    <div class="prompt">C:\&gt;</div>
+    <div class="input">
+        <span class="command">CD</span>
+        <span class="parameter">DOCUMENTS</span>
+    </div>
+    <div class="output"></div>
+    <div class="prompt">C:\DOCUMENTS&gt;</div>
+    <div class="input">
+        <span class="command">EDIT</span>
+        <span class="parameter">FILE1.TXT</span>
+    </div>
+    <div class="output">File not found</div>
+</body>
+</html>
