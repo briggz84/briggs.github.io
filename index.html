@@ -4,9 +4,30 @@
     <title>briggs.id</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+	
+    <script>
+        // Generate a random number between 0 and 1
+        var randomNum = Math.random();
+
+        // Function to check if the gif should be shown based on the random number
+        function shouldShowGif() {
+            return randomNum < 0.5; // Adjust the threshold as needed
+        }
+
+        // Add or remove 'rick-roll' class to container based on the random number
+        window.onload = function() {
+            var container = document.querySelector('.container');
+            if (shouldShowGif()) {
+                container.classList.add('rick-roll');
+            } else {
+                container.classList.remove('rick-roll');
+            }
+        };
+    </script>
+	
 </head>
 <body>
-    <div class="container">
+    <div class="container flashing hide-text">
         <div class="msdos-section">
             <div class="prompt">C:\></div>
             <div class="output">Microsoft(R) MS-DOS(R) Version 6.22</div>
