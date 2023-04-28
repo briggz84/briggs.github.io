@@ -11,15 +11,15 @@ body {
 }
 
 .container {
-  width: 806px;
-  height: 609px;
-  background-image: url("bezel.png"), url("scanlines.png");
-  background-repeat: no-repeat, no-repeat;
-  background-size: contain, contain;
-  background-position: center center, center center;
-  padding: 55px 0 0 55px;
-  text-align: left;
-  position: relative;
+    max-width: 800px;
+    background-image: url("bezel.png"), url("scanlines.png");
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+    background-position: center center, center center;
+    padding: 55px;
+    text-align: left;
+    position: relative;
+	overflow: hidden;
 }
 
 .prompt {
@@ -105,7 +105,6 @@ body {
 }
 
 .msdos-section {
-
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
 }
@@ -129,8 +128,19 @@ body {
     animation-delay: 0.4s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     body {
         padding: 5px;
+		font-size: 1vw;
+    }
+
+    .container {
+        max-width: 100%;
+		padding-left: 25px;
+    }
+
+    .ascii-art {
+        margin-left: 0;
+		font-size: 1.2vw;
     }
 }
