@@ -20,7 +20,6 @@ body {
   padding: 55px 0 0 55px;
   text-align: left;
   position: relative;
-  /* Rest of your styles */
 }
 
 .prompt {
@@ -55,7 +54,7 @@ body {
     font-size: 14px;
     white-space: pre;
     animation: colorFade 8s infinite;
-    margin-left: 50px; /* Adjust the value as needed */
+    margin-left: 50px;
 }
 
 .cursor {
@@ -86,23 +85,23 @@ body {
 @keyframes flashAnimation {
   0% {
     background-image: url("bezel.png"), url("scanlines.png");
-    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random())); /* Randomize the translation */
+    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
   }
   50% {
-    background-image: url("bezel.png"), url("rick-roll.gif");
+    background-image: url("bezel.png"), url("rick-roll.webp");
     background-size: contain, 98% auto;
 	filter: brightness(50%);
-    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random())); /* Randomize the translation */
+    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
   }
   100% {
     background-image: url("bezel.png"), url("scanlines.png");
-    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random())); /* Randomize the translation */
+    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
   }
 }
 
 .container.flashing {
   animation: flashAnimation 3s linear infinite;
-  animation-delay: 1s; /* Delay the animation start by 1 second */
+  animation-delay: 1s;
 }
 
 .msdos-section {
