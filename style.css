@@ -1,6 +1,6 @@
 body {
     font-family: 'Courier New', monospace;
-    background-color: #222;
+    background-color: #3d004d;
     color: #fff;
     padding: 10px;
     margin: 0;
@@ -11,12 +11,14 @@ body {
 }
 
 .container {
+	background-color: #8c8c8c;
     max-width: 800px;
     background-image: url("bezel.png"), url("scanlines.png");
     background-repeat: no-repeat, no-repeat;
     background-size: contain, contain;
     background-position: center center, center center;
-    padding: 55px;
+    padding: 54px;
+	height: 532px;
     text-align: left;
     position: relative;
     overflow: hidden;
@@ -88,6 +90,10 @@ body {
     transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
   }
   50% {
+    background-image: url("bezel.png"), url("static.webp");
+    transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
+  }
+  51% {
     background-image: url("bezel.png"), url("rick-roll.webp");
     background-size: contain, 98% auto;
 	filter: brightness(50%);
@@ -130,17 +136,10 @@ body {
 
 @media (max-width: 800px) {
     body {
-        padding: 5px;
-		font-size: 1vw;
+		overflow: hidden;
     }
 
     .container {
-        max-width: 100%;
-		padding-left: 25px;
-    }
-
-    .ascii-art {
-        margin-left: 0;
-		font-size: 1.2vw;
+		display: none;
     }
 }
