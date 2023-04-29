@@ -1,6 +1,7 @@
 body {
     font-family: 'Courier New', monospace;
-    background-color: #3d004d;
+    background: rgb(175,63,251);
+    background: radial-gradient(circle, rgba(175,63,251,1) 0%, rgba(102,70,252,1) 100%); 
     color: #fff;
     padding: 10px;
     margin: 0;
@@ -11,14 +12,14 @@ body {
 }
 
 .container {
-	background-color: #8c8c8c;
-    max-width: 800px;
+    background-color: #8c8c8c;
     background-image: url("bezel.png"), url("scanlines.png");
     background-repeat: no-repeat, no-repeat;
-    background-size: contain, contain;
+    background-size: 101% auto, contain;
     background-position: center center, center center;
-    padding: 54px;
-	height: 532px;
+    padding: 55px;
+    height: 582px;
+    width: 808px;
     text-align: left;
     position: relative;
     overflow: hidden;
@@ -54,6 +55,7 @@ body {
 .ascii-art {
     font-family: 'Courier New', monospace;
     font-size: 14px;
+    text-shadow: 2px 2px;
     white-space: pre;
     animation: colorFade 8s infinite;
     margin-left: 50px;
@@ -88,19 +90,22 @@ body {
   0% {
     background-image: url("bezel.png"), url("scanlines.png");
     transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
+    background-size: 101% auto, contain;
   }
   50% {
     background-image: url("bezel.png"), url("static.webp");
     transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
+    background-size: 101% auto, 98% auto;
   }
   51% {
     background-image: url("bezel.png"), url("rick-roll.webp");
-    background-size: contain, 98% auto;
-	filter: brightness(50%);
+    background-size: 101% auto, 98% auto;
+    filter: brightness(50%);
     transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
   }
   100% {
     background-image: url("bezel.png"), url("scanlines.png");
+    background-size: 101% auto, contain;
     transform: translate(calc(-10px + 20px * random()), calc(-10px + 20px * random()));
   }
 }
@@ -136,10 +141,10 @@ body {
 
 @media (max-width: 800px) {
     body {
-		overflow: hidden;
+        overflow: hidden;
     }
 
     .container {
-		display: none;
+        display: none;
     }
 }
