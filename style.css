@@ -1,0 +1,95 @@
+body {
+    font-family: 'Courier New', monospace;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(69,20,110,1) 100%); 
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
+.container {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.container:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+.container:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+.ascii-art {
+    animation: colorFade 8s infinite;
+}
+
+.ascii-text .ascii-art {
+    font-size: 14px;
+    text-shadow: 2px 2px;
+    white-space: pre;
+    margin-left: 0px;
+}
+
+@keyframes colorFade {
+    0%, 10% {
+        color: #0f0; /* Green */
+     }
+    20%, 30% {
+        color: #f00; /* Red */
+    }
+    40%, 50% {
+        color: #ff0; /* Yellow */
+    }
+    60%, 70% {
+        color: #0f0; /* Green */
+    }
+    80%, 90% {
+        color: #f00; /* Red */
+    }
+    100% {
+        color: #0f0; /* Green */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+    
+    .ascii-text {
+        font-size: 0.5em;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .ascii-art {
+        font-size: 0.5em;
+    }
+}
