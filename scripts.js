@@ -16,23 +16,20 @@ function fetchCompletionCount() {
 }
 
 function incrementCompletionCount() {
-  fetch(`https://abacus.jasoncameron.dev/hit/${namespace}/${key}`, {
-    method: 'POST'
-  })
-  .then(res => {
-    if (!res.ok) {
-      throw new Error(`Failed to increment count: ${res.status}`);
-    }
-    return res.json();
-  })
-  .then(data => {
-    console.log('Increment success:', data);
-    // Optionally update the displayed count immediately
-    fetchCompletionCount();
-  })
-  .catch(err => {
-    console.error('Increment error:', err);
-  });
+  fetch(`https://abacus.jasoncameron.dev/hit/${namespace}/${key}`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`Failed to increment count: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log('Increment success:', data);
+      fetchCompletionCount();
+    })
+    .catch(err => {
+      console.error('Increment error:', err);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', fetchCompletionCount);
