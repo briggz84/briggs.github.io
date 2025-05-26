@@ -35,6 +35,13 @@ a {
     font-size 0.5em;
 }
 
+.count {
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    font-size 0.5em;
+}
+
 .container {
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;

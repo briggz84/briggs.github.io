@@ -496,6 +496,7 @@ function runGame(plans, Display) {
         startLevel(n + 1);
       else
         alert("You win!");
+        incrementCompletionCount();
     });
   }
   startLevel(0);
