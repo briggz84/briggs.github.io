@@ -32,4 +32,8 @@ function incrementCompletionCount() {
     });
 }
 
+function showFireworks() {
+    document.getElementById("fireworks").style.display = "block";
+}
+
 document.addEventListener('DOMContentLoaded', fetchCompletionCount);

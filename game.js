@@ -497,6 +497,7 @@ function runGame(plans, Display) {
       else
         alert("You win!");
         incrementCompletionCount();
+        showFireworks()
     });
   }
   startLevel(0);
