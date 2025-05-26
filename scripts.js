@@ -1,3 +1,14 @@
+const backgrounds = [
+    "https://i.giphy.com/26BROrSHlmyzzHf3i.webp",
+    "https://i.giphy.com/z2POQZ2t8s5Gzp4C7r.webp",
+    "https://i.giphy.com/3bc8pP1rVdfgN1uoMV.webp",
+    "https://i.giphy.com/dB66K4Kywc8gPVh6A7.webp"
+];
+
+const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+document.querySelector('.ascii-text').style.backgroundImage = `url(${randomBg})`;
+
 const namespace = 'al2qPsqUVtRPWxHi';
 const key = 'T7p1OOrVXOCkZgT5';
 

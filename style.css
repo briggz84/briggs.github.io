@@ -58,7 +58,7 @@ a {
 
 .ascii-text {
     font-family: 'Doom', sans-serif;
-    background-image: url(https://i.giphy.com/26BROrSHlmyzzHf3i.webp);
+    /* background-image will be set by JS */
     background-position: 0px -80px;
     background-size: cover;
     color: transparent;
