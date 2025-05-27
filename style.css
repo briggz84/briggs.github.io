@@ -107,7 +107,7 @@ a {
         padding: 0;
     }
     
-    .game, .credit {
+    .game, .credit, .count {
         display: none; /* Hide game in mobile view */
     }
     
