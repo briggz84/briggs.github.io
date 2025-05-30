@@ -137,6 +137,11 @@ DOMDisplay.prototype.drawActors = function() {
         rect.style.height = actor.size.y * scale + "px";
         rect.style.left = actor.pos.x * scale + "px";
         rect.style.top = actor.pos.y * scale + "px";
+        
+        // Add CSS class for left-facing player sprite
+        if (actor.type === "player" && actor.facing === "left") {
+          rect.classList.add("facing-left");
+        }
     });
     return wrap;
 }
@@ -286,6 +291,17 @@ Player.prototype.act = function(step, level, keys) {
   if (otherActor)
     level.playerTouched(otherActor.type, otherActor);
 
+  // Change player direction
+  if (this.speed.x < 0) {
+    if (this.facing !== "left") {
+      this.facing = "left";
+    }
+  } else if (this.speed.x > 0) {
+    if (this.facing !== "right") {
+      this.facing = "right";
+    }
+  }
+  
   // Losing animation
   if (level.status == "lost") {
     this.pos.y += step;
@@ -374,7 +390,7 @@ function runGame(plans, Display) {
         startLevel(n + 1);
       } else {
         alert("You win!");
-        backgroundMusic.stop();
+        backgroundMusic.pause();
         incrementCompletionCount();
         showFireworks();
       }

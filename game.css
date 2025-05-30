@@ -32,9 +32,22 @@ h2 {
     border-radius: 50%;
 }
 
-.player {
+/* .player {
     background: #335699;
     box-shadow: none;
+}*/
+
+.player {
+    background: none;
+    background-image: url('player.png');
+    background-size: cover;
+    box-shadow: none;
+    transform: scaleX(1);
+    transition: transform 0.1s linear;
+}
+
+.player.facing-left {
+    transform: scaleX(-1);
 }
 
 .lost .player {
@@ -42,7 +55,7 @@ h2 {
 }
 
 .won .player {
-    background: green;
+    /* background: green; */
 }
 
 .game {
