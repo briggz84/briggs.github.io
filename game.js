@@ -6,8 +6,6 @@ fetch('levels.json')
     });
 
 const backgroundMusic = new Audio('music.mp3');
-const lostSound = new Audio('lost.mp3');
-const coinSound = new Audio('coin.mp3');
 
 function Vector(x, y) {
     this.x = x; this.y = y;
@@ -298,11 +296,11 @@ Player.prototype.act = function(step, level, keys) {
 Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava" && this.status == null) {
     this.status = "lost";
-    lostSound.play();
+    new Audio('lost.mp3').play();
     this.finishDelay = 1;
   } else if (type == "coin") {
     this.actors = this.actors.filter(function(other) {
-      coinSound.play();
+      new Audio('coin.mp3').play().catch(() => {});
       return other != actor;
     });
     if (!this.actors.some(function(actor) {
