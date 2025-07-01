@@ -1,3 +1,32 @@
+let startTime = null;
+let timerInterval = null;
+var hasStarted = false;
+
+function startTimer() {
+  startTime = Date.now();
+
+  timerInterval = setInterval(() => {
+    const elapsedMs = Date.now() - startTime;
+    const totalSeconds = elapsedMs / 1000;
+
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = (totalSeconds % 60).toFixed(1);
+
+    let timeText = '';
+
+    if (minutes > 0) {
+      // Format: M:SS.s (pad seconds if needed)
+      const secondsPadded = seconds < 10 ? '0' + seconds : seconds;
+      timeText = `${minutes}:${secondsPadded}`;
+    } else {
+      // Just seconds with decimal
+      timeText = `${seconds}s`;
+    }
+
+    document.getElementById("speedrunTimer").textContent = `Time: ${timeText}`;
+  }, 100);
+}
+
 fetch('levels.json')
     .then(response => response.json())
     .then(data => {
@@ -228,7 +257,6 @@ Level.prototype.animate = function(step, keys) {
   }
 };
 
-
 Lava.prototype.act = function(step, level) {
   var newPos = this.pos.plus(this.speed.times(step));
   if (!level.obstacleAt(newPos, this.size))
@@ -314,11 +342,16 @@ Level.prototype.playerTouched = function(type, actor) {
     this.status = "lost";
     new Audio('lost.mp3').play();
     this.finishDelay = 1;
+
   } else if (type == "coin") {
+    new Audio('coin.mp3').play().catch(() => {});
+
+    // Remove the collected coin
     this.actors = this.actors.filter(function(other) {
-      new Audio('coin.mp3').play().catch(() => {});
       return other != actor;
     });
+
+    // Check if that was the last coin
     if (!this.actors.some(function(actor) {
       return actor.type == "coin";
     })) {
@@ -342,6 +375,11 @@ function trackKeys(codes) {
       if (down) {
         backgroundMusic.loop = true;
         backgroundMusic.play();
+        
+        if (!hasStarted) {
+          startTimer();
+          hasStarted = true;
+        }
       }
     }
   }

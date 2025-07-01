@@ -17,19 +17,33 @@ h2 {
     background: #e55;
 }
 
+.lava {
+    box-shadow: inset 0 0 8px 3px rgba(255, 140, 0, 0.7);
+}
+
 .wall {
-    background: #444;
-    border: solid 3px #333;
+    background: linear-gradient(135deg, #555, #333);
+    border: solid 1.5px #333;
     box-sizing: content-box;
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.7))
+            brightness(1.1)
+            contrast(1.2);
 }
 
 .actor {
     position: absolute;
 }
 
-.coin {
+/* .coin {
     background: #e2e838;
     border-radius: 50%;
+} */
+
+.coin {
+    background: radial-gradient(circle at center, #ffec64, #d4af37);
+    border-radius: 50%;
+    border: 1px solid #b8860b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* .player {

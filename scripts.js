@@ -10,9 +10,16 @@ const backgrounds = [
     "https://i.giphy.com/QAbHzYf8EhhU7yluFb.webp",
 ];
 
-const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+function setRandomBackground() {
+  const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+  document.querySelector('.ascii-text').style.backgroundImage = `url(${randomBg})`;
+}
 
-document.querySelector('.ascii-text').style.backgroundImage = `url(${randomBg})`;
+// Set initially
+setRandomBackground();
+
+// Change every 1 minute (60000 milliseconds)
+setInterval(setRandomBackground, 30000);
 
 const namespace = 'al2qPsqUVtRPWxHi';
 const key = 'T7p1OOrVXOCkZgT5';
