@@ -427,7 +427,8 @@ function runGame(plans, Display) {
       } else if (n < plans.length - 1) {
         startLevel(n + 1);
       } else {
-        alert("You win!");
+        //alert("You win!");
+        clearInterval(timerInterval); //Stop timer
         backgroundMusic.pause();
         incrementCompletionCount();
         showFireworks();
